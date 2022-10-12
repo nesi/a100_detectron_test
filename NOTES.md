@@ -59,20 +59,10 @@ and using 1 GPU
 TODO --num-gpus 1 SOLVER.IMS_PER_BATCH 2 SOLVER.BASE_LR 0.0025
 ```
 
-to monitor the GPU in parallel
-
-```
-STATS_INTERVAL=5
-STATS_FILE="gpu_stats.csv"
-nvidia-smi --query-gpu=timestamp,uuid,clocks_throttle_reasons.sw_thermal_slowdown,utilization.gpu,utilization.memory,memory.used,memory.total,temperature.gpu,power.draw,clocks.current.sm \
-    --format=csv,nounits \
-    -l "$STATS_INTERVAL" \
-    -f "$STATS_FILE"
-```
-
 
 ## Todos
 
+- load NCCL module, but seems already in pytorch https://discuss.pytorch.org/t/pytorch-cuda-and-nccl/132427
 - check/profile communication (nvlink, nccl?)
   see https://pytorch.org/docs/stable/distributed.html#profiling-collective-communication
 
