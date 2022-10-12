@@ -65,6 +65,10 @@ TODO --num-gpus 1 SOLVER.IMS_PER_BATCH 2 SOLVER.BASE_LR 0.0025
 - load NCCL module, but seems already in pytorch https://discuss.pytorch.org/t/pytorch-cuda-and-nccl/132427
 - check/profile communication (nvlink, nccl?)
   see https://pytorch.org/docs/stable/distributed.html#profiling-collective-communication
+- try AMP?
+- compare with 2 PCIe A100
+- compare with 1 A100 (PCIe or HGX?)
+- compare with 4 cards using MPI/NCCL?
 
 
 ## Reference
