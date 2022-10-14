@@ -1,4 +1,4 @@
-# Notes
+# HGX A100 nodes test
 
 Notes about tests on the HGX A100 nodes.
 
