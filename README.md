@@ -74,6 +74,8 @@ Potential next steps:
 - check if it is actually using NVlink (logs don’t say anything about it), try nccl backend maybe (if it is not the default)?
 - try 8 GPUs training using 2 nodes (once slurm is in place?)
 
+(2022/10/16) 2 PCIe A100s test: AP 37.92, 9:46:32, 0.3910 s)
+
 
 ## Todos
 
@@ -82,7 +84,6 @@ Potential next steps:
 - check/profile communication (nvlink, nccl?)
   see https://pytorch.org/docs/stable/distributed.html#profiling-collective-communication
 - try AMP?
-- compare with 2 PCIe A100
 - compare with 4 PCIe A100 using MPI/NCCL?
 - test 8 GPUs (2 HGX) using MPI/NCCL?
 
