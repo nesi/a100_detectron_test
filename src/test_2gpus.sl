@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 #SBATCH --account=nesi99999
-#SBATCH --time=00-24:00:00
+#SBATCH --time=00-15:00:00
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=4
+#SBATCH --cpus-per-task=12
 #SBATCH --gpus-per-node=A100:2
 #SBATCH --mem=20GB
 #SBATCH --output logs/%j-%x.out
