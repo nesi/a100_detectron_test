@@ -74,7 +74,7 @@ Potential next steps:
 - check if it is actually using NVlink (logs don’t say anything about it), try nccl backend maybe (if it is not the default)?
 - try 8 GPUs training using 2 nodes (once slurm is in place?)
 
-(2022/10/16) 2 PCIe A100s test: AP 37.92, 9:46:32, 0.3910 s)
+(2022/10/16) 2 PCIe A100s test: AP 37.92, 9:46:32, 0.3910 s/it
 
 
 ## Todos
