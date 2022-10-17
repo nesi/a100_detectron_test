@@ -83,6 +83,7 @@ Potential next steps:
 - load NCCL module, but seems already in pytorch https://discuss.pytorch.org/t/pytorch-cuda-and-nccl/132427
 - check/profile communication (nvlink, nccl?)
   see https://pytorch.org/docs/stable/distributed.html#profiling-collective-communication
+- run dl-prof to check inter-GPU data transfer?
 - try AMP?
 - compare with 4 PCIe A100 using MPI/NCCL?
 - test 8 GPUs (2 HGX) using MPI/NCCL?
