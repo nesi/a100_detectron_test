@@ -2,7 +2,8 @@
 #SBATCH --account=nesi99999
 #SBATCH --time=00-15:00:00
 #SBATCH --ntasks=2
-#SBATCH --cpus-per-task=4
+#SBATCH --cpus-per-task=5
+#SBATCH --hint=nomultithread
 #SBATCH --gpus-per-task=A100:1
 #SBATCH --gpu-bind=single:1
 #SBATCH --mem=20GB
