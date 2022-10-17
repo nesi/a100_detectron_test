@@ -4,10 +4,10 @@
 #SBATCH --ntasks=2
 #SBATCH --cpus-per-task=4
 #SBATCH --gpus-per-task=A100:1
-
+#SBATCH --gpu-bind=single:1
 #SBATCH --mem=20GB
-#SBATCH --output logs/%j-%x.out
-#SBATCH --error logs/%j-%x.out
+#SBATCH --output=logs/%j-%x.out
+#SBATCH --error=logs/%j-%x.out
 #SBATCH --export=NONE
 
 export SLURM_EXPORT_ENV=ALL
