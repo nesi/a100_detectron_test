@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #SBATCH --account=nesi99999
-#SBATCH --time=00-00:10:00
+#SBATCH --time=00-15:00:00
 #SBATCH --ntasks=2
 #SBATCH --cpus-per-task=4
 #SBATCH --gpus-per-task=A100:1
