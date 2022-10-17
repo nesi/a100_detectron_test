@@ -25,13 +25,15 @@ cd $RESULTS_DIR
 
 export DETECTRON2_DATASETS=/nesi/nobackup/nesi99999/riom/detectron2_datasets
 export NCCL_SOCKET_IFNAME=ib0
+export NCCL_DEBUG=INFO
 
 MASTER_ADDR=$HOSTNAME
 MASTER_PORT=$(python -c 'import socket; s=socket.socket(); s.bind(("", 0)); print(s.getsockname()[1]); s.close()')
+export MASTER_URL="tcp://${MASTER_ADDR}:${MASTER_PORT}"
 
-srun python ../../detectron2/tools/train_net.py \
+srun bash -c 'python ../../detectron2/tools/train_net.py \
     --config-file ../../detectron2/configs/COCO-Detection/faster_rcnn_R_50_FPN_1x.yaml \
     --num-gpus 1 \
     --num-machines 2 \
-    --machine-rank "$SLURM_PROCID" \
-    --dist-url "tcp://${MASTER_ADDR}:${MASTER_PORT}"
+    --machine-rank $SLURM_PROCID \
+    --dist-url $(printenv MASTER_URL)'
