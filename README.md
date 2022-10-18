@@ -75,6 +75,7 @@ Potential next steps:
 - try 8 GPUs training using 2 nodes (once slurm is in place?)
 
 - (2022/10/16, job 30961630) 2 PCIe A100s (1 task / 1 node): AP 37.92, 9:46:32, 0.3910 s/it
+- (2022/10/19, job 30982571) 2 PCIe A100s (1 task / 1 node): AP 38.01, 10:27:39, 0.4184 s/it
 - (2022/10/18, job 30975009) 2 PCIe A100s (2 tasks / 2 nodes): AP 37.88, 9:32:56, 0.3820 s/it
 - (2022/10/18, job 30975012) 4 PCIe A100s (2 tasks / 2 nodes): AP 38.09, 5:47:41, 0.2318 s/it
 
@@ -97,6 +98,8 @@ src/test_gpus.bash --num-gpus 4 --num-machines 2 --machine-rank 1 \
     --dist-url tcp://wmg002:25000 2>&1 | tee $RESULTS_DIR/fit_wmg004.log
 ```
 
+(2022/19/10) AP 37.97, 2:43:43, 0.1092 s/it
+
 
 ## Todos
 
@@ -106,8 +109,6 @@ src/test_gpus.bash --num-gpus 4 --num-machines 2 --machine-rank 1 \
   see https://pytorch.org/docs/stable/distributed.html#profiling-collective-communication
 - run dl-prof to check inter-GPU data transfer?
 - try AMP?
-- compare with 4 PCIe A100 using MPI/NCCL?
-- test 8 GPUs (2 HGX) using MPI/NCCL?
 
 
 ## Reference
