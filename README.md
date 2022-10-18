@@ -79,6 +79,25 @@ Potential next steps:
 - (2022/10/18, job 30975012) 4 PCIe A100s (2 tasks / 2 nodes): AP 38.09, 5:47:41, 0.2318 s/it
 
 
+## Test on 8 GPUs
+
+Log in wmg002 and run
+
+```
+export RESULTS_DIR=results/test_8gpus
+src/test_gpus.bash --num-gpus 4 --num-machines 2 --machine-rank 0 \
+    --dist-url tcp://wmg002:25000 2>&1 | tee $RESULTS_DIR/fit_wmg002.log
+```
+
+Then log in wmg004 and run
+
+```
+export RESULTS_DIR=results/test_8gpus
+src/test_gpus.bash --num-gpus 4 --num-machines 2 --machine-rank 1 \
+    --dist-url tcp://wmg002:25000 2>&1 | tee $RESULTS_DIR/fit_wmg004.log
+```
+
+
 ## Todos
 
 - plot GPU usage curves
