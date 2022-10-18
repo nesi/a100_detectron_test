@@ -27,6 +27,6 @@ export DETECTRON2_DATASETS=/nesi/nobackup/nesi99999/riom/detectron2_datasets
 export NCCL_SOCKET_IFNAME=ib0
 export NCCL_DEBUG=INFO
 
-srun bash -c 'python ../../detectron2/tools/train_net.py \
+srun python ../../detectron2/tools/train_net.py \
     --config-file ../../detectron2/configs/COCO-Detection/faster_rcnn_R_50_FPN_1x.yaml \
     --num-gpus 2
