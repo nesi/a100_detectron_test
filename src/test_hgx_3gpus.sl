@@ -6,8 +6,8 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=5
 #SBATCH --hint=nomultithread
-#SBATCH --gpus-per-task=A100:4
-#SBATCH --mem=60GB
+#SBATCH --gpus-per-task=A100:3
+#SBATCH --mem=40GB
 #SBATCH --output=logs/%j-%x.out
 #SBATCH --error=logs/%j-%x.out
 
@@ -33,5 +33,5 @@ MASTER_PORT=$(python -c 'import socket; s=socket.socket(); s.bind(("", 0)); prin
 
 python ../../detectron2/tools/train_net.py \
     --config-file ../../detectron2/configs/COCO-Detection/faster_rcnn_R_50_FPN_1x.yaml \
-    --num-gpus 4 \
+    --num-gpus 3 \
     --machine-rank $SLURM_PROCID
