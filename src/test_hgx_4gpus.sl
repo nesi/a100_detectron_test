@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#SBATCH --reservation=MAHUIKAEX-255
 #SBATCH --account=nesi99999
 #SBATCH --partition=hgx
 #SBATCH --time=00-15:00:00
@@ -13,6 +14,9 @@
 
 export SLURM_EXPORT_ENV=ALL
 
+# for MEX nodes
+. /etc/bashrc
+
 # exit on errors, undefined variables and errors in pipes
 set -euo pipefail
 
@@ -25,7 +29,6 @@ mkdir -p $RESULTS_DIR
 cd $RESULTS_DIR
 
 export DETECTRON2_DATASETS=/nesi/nobackup/nesi99999/riom/detectron2_datasets
-export NCCL_SOCKET_IFNAME=ib0
 export NCCL_DEBUG=INFO
 
 MASTER_ADDR=$HOSTNAME
