@@ -10,9 +10,6 @@
 #SBATCH --mem=20GB
 #SBATCH --output=logs/%j-%x.out
 #SBATCH --error=logs/%j-%x.out
-#SBATCH --export=NONE
-
-export SLURM_EXPORT_ENV=ALL
 
 # for MEX nodes
 . /etc/bashrc
