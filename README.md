@@ -101,6 +101,18 @@ src/test_gpus.bash --num-gpus 4 --num-machines 2 --machine-rank 1 \
 (2022/19/10) AP 37.97, 2:43:43, 0.1092 s/it
 
 
+# Test HGX via Slurm
+
+Some tests of HGX A100 using a Slurm job
+
+- 31002046 - 2 GPUs (1 node): AP 37.94, 8:04:50 (0.3232 s/it)
+- 31002077 - 3 GPUs (1 node): crashed with error
+  ```
+  AssertionError: Total batch size (16) must be divisible by the number of gpus (3).
+  ```
+- 31002070 - 4 GPUs (1 node): AP 38.07, 5:08:29 (0.2057 s/it)
+
+
 ## Todos
 
 - plot GPU usage curves
