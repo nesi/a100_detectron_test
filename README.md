@@ -112,6 +112,12 @@ Some tests of HGX A100 using a Slurm job
   ```
 - 31002070 - 4 GPUs (1 node): AP 38.07, 5:08:29 (0.2057 s/it)
 
+Make sure to delete checkpointed models (once jobs are completed) to save space:
+
+```
+find results/ -name '*.pth' -exec rm {} \;
+```
+
 
 ## Todos
 
