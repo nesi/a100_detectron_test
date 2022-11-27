@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
-#SBATCH --reservation=MAHUIKAEX-255
 #SBATCH --account=nesi99999
 #SBATCH --partition=hgx
-#SBATCH --time=00-15:00:00
+#SBATCH --time=00-10:00:00
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=5
+#SBATCH --cpus-per-task=10
 #SBATCH --hint=nomultithread
 #SBATCH --gpus-per-task=A100:4
 #SBATCH --mem=60GB
@@ -12,7 +11,7 @@
 #SBATCH --error=logs/%j-%x.out
 
 # for MEX nodes
-. /etc/bashrc
+#. /etc/bashrc
 
 # exit on errors, undefined variables and errors in pipes
 set -euo pipefail
@@ -28,10 +27,10 @@ cd $RESULTS_DIR
 export DETECTRON2_DATASETS=/nesi/nobackup/nesi99999/riom/detectron2_datasets
 export NCCL_DEBUG=INFO
 
-MASTER_ADDR=$HOSTNAME
-MASTER_PORT=$(python -c 'import socket; s=socket.socket(); s.bind(("", 0)); print(s.getsockname()[1]); s.close()')
+#MASTER_ADDR=$HOSTNAME
+#MASTER_PORT=$(python -c 'import socket; s=socket.socket(); s.bind(("", 0)); print(s.getsockname()[1]); s.close()')
 
 python ../../detectron2/tools/train_net.py \
     --config-file ../../detectron2/configs/COCO-Detection/faster_rcnn_R_50_FPN_1x.yaml \
     --num-gpus 4 \
-    --machine-rank $SLURM_PROCID
+    #--machine-rank $SLURM_PROCID
