@@ -2,10 +2,11 @@
 #SBATCH --account=nesi99999
 #SBATCH --partition=hgx
 #SBATCH --time=00-10:00:00
-#SBATCH --ntasks=2
+#SBATCH --nodes=2
+#SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=10
 #SBATCH --hint=nomultithread
-#SBATCH --gpus-per-task=A100:2
+#SBATCH --gpus-per-node=A100:2
 #SBATCH --mem=60GB
 #SBATCH --output=logs/%A_%a-%x.out
 #SBATCH --error=logs/%A_%a-%x.out
