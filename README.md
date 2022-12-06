@@ -121,10 +121,15 @@ find results/ -name '*.pth' -exec rm {} \;
 
 ## Todos
 
+- test 2x2 HGX GPUs on 2 nodes
+- test 2x4 HGX GPUs on 2 nodes
+- test 4x1 HGX GPUs on 4 nodes
+- test 2x1 HGX GPUs on 2 nodes
 - plot GPU usage curves
 - load NCCL module, but seems already in pytorch https://discuss.pytorch.org/t/pytorch-cuda-and-nccl/132427
 - check/profile communication (nvlink, nccl?)
-  see https://pytorch.org/docs/stable/distributed.html#profiling-collective-communication
+  - https://pytorch.org/docs/stable/distributed.html#profiling-collective-communication
+  - https://docs.rapids.ai/api/dask-cuda/nightly/examples/best-practices.html#accelerated-networking
 - run dl-prof to check inter-GPU data transfer?
 - try AMP?
 
