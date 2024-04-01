@@ -1,6 +1,6 @@
-# HGX A100 nodes test
+# Detectron2-based A100 tests
 
-Notes about tests on the HGX A100 nodes.
+Notes about tests on the A100 nodes using Detectron2.
 
 
 ## Detectron2
